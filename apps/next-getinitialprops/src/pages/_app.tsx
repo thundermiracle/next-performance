@@ -10,7 +10,7 @@ interface MyProps extends AppProps {
 export default function MyApp({ Component, pageProps, host, data }: MyProps) {
   console.log({ host, data });
 
-  return <Component {...pageProps} />;
+  return <Component {...pageProps} data={data} />;
 }
 
 // use getInitialProps to fetch data

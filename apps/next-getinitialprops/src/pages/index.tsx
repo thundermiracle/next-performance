@@ -1,11 +1,15 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+interface HomeProps {
+  data: any;
+}
+
+export default function Home({ data }: HomeProps) {
   return (
     <>
       <Head>
@@ -26,7 +30,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By{" "}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -40,14 +44,8 @@ export default function Home() {
         </div>
 
         <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
+          <b>Data From Server:</b>
+          <pre>{JSON.stringify(data)}</pre>
         </div>
 
         <div className={styles.grid}>
@@ -110,5 +108,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }
