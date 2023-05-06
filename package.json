@@ -3,6 +3,7 @@
   "private": true,
   "packageManager": "pnpm@8.4.0",
   "scripts": {
-    "dev:initial": "pnpm --filter next-getinitialprops dev"
+    "dev:initial": "pnpm --filter next-getinitialprops dev",
+    "dev:server": "pnpm --filter next-getserversideprops dev"
   }
 }
